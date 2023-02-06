@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomepageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [HomepageController::class, 'index']); /// its Route for Laravel8 - index Action 
+
+
+
+/*
+// в Laravel 8, вместо return redirect()->route(\'review\');
+// делаем:
+// return redirect(\'review\');
+
+*/
